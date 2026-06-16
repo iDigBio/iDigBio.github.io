@@ -1,0 +1,281 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <title>iDigBio &ndash; We've Moved</title>
+  <link rel="icon" href="idigbio-mark-128_0.png" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/fontawesome.min.css" integrity="sha512-M5Kq4YVQrjg5c2wsZSn27Dkfm/2ALfxmun0vUE3mPiJyK53hQBHYCVAtvMYEC7ZXmYLg8DVG4tF8gD27WmDbsg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/brands.min.css" integrity="sha512-WxpJXPm/Is1a/dzEdhdaoajpgizHQimaLGL/QqUIAjIihlQqlPQb1V9vkGs9+VzXD7rgI6O+UsSKl4u5K36Ydw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <style>
+    :root {
+      --brand: #517f3d;       /* WCAG 2.1 AA on white; original brand #6aaa51 */
+      --brand-dark: #3e612f;  /* hover/active */
+      --focus: #3378bd;       /* focus ring color */
+      --ink: #1a1a1a;
+      --muted: #50555c;
+      --page: #ffffff;
+      --bg: #ffffff;          /* echo legacy simple white page */
+      --maxw: 980px;            /* classic content width */
+      --radius: 12px;
+      --shadow: 0 4px 24px rgba(0,0,0,.06);
+      --border: #e6edf5;
+    }
+
+    html, body { height:100%; }
+
+    body {
+      margin: 0;
+      font-family: system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, "Apple Color Emoji", "Segoe UI Emoji";
+      color: var(--ink);
+      background: var(--bg);
+      display: grid;
+      place-items: start center;
+      line-height: 1.5;
+    }
+
+    .wrap {
+      width: min(100% - 2rem, var(--maxw));
+      margin: 3rem 1rem 2rem;
+    }
+
+    header {
+      display: grid;
+      gap:1rem;
+      align-items: start;
+      margin-bottom: 1.5rem;
+    }
+
+    .brand {
+      display:flex;
+      align-items:center;
+      justify-content: flex-start; /* left-align */
+      gap:1rem;
+    }
+
+    .brand img {
+      width:200px;
+      height:auto;
+    }
+
+    .notice {
+      background:var(--page);
+      border-radius:var(--radius);
+      box-shadow:var(--shadow);
+      padding:clamp(1rem,2vw + .5rem,1.25rem);
+      border:1px solid var(--border);
+    }
+
+    .notice h1 {
+      font-size:clamp(1.35rem,1.1rem + 1.2vw,1.85rem);
+      line-height:1.2;
+      margin:0;
+    }
+
+    .notice p {
+      margin:.3rem 0 0 0;
+      color:var(--muted);
+    }
+
+    .grid {
+      display:grid;
+      grid-template-columns:1fr;
+      gap:1rem;
+      margin:1.25rem 0 1.5rem;
+      align-items:stretch;
+    }
+    @media (min-width:640px){
+      .grid{ grid-template-columns:repeat(2,1fr); }
+    }
+
+    /* Equal-height card layout with button pinned to bottom */
+    .card {
+      background:var(--page);
+      border:1px solid var(--border);
+      border-radius:var(--radius);
+      box-shadow:var(--shadow);
+      padding:1rem;
+      display:flex;
+      flex-direction:column;
+      gap:.5rem;
+    }
+    .card h2 {
+      font-size:1.05rem;
+      margin:0;
+    }
+    .card p {
+      margin:0;
+      color:var(--muted);
+    }
+    .spacer { flex-grow: 1; }
+
+    .btn {
+      display:inline-flex;
+      align-items:center;
+      justify-content:center;
+      gap:.5rem;
+      margin-top:.25rem;
+      padding:.7rem .9rem;
+      border-radius:4px;
+      text-decoration:none;
+      color:#fff;
+      background:linear-gradient(180deg, var(--brand), var(--brand-dark));
+      border:1px solid rgba(0,0,0,.06);
+      box-shadow:0 1px 0 rgba(255,255,255,.25) inset, 0 4px 12px rgba(0,0,0,.10);
+      font-weight:600;
+      transition:transform .06s ease, box-shadow .2s ease, filter .2s ease;
+    }
+
+    a:focus-visible,
+    .btn:focus-visible {
+      outline: 3px solid var(--focus);
+      outline-offset: 3px;
+    }
+
+    .aside {
+      background:#f4f7f1;
+      border:1px dashed #cfe3cf;
+      color:#2f3a2f;
+      padding:.75rem 1rem;
+      border-radius:var(--radius);
+      font-size:.95rem;
+      margin-top: .5rem;
+    }
+
+    footer {
+      margin-top:2rem;
+      display:grid;
+      gap:1rem;
+      color:var(--muted);
+    }
+    .logo-suite {
+      background:var(--page);
+      border:1px solid var(--border);
+      border-radius:var(--radius);
+      box-shadow:var(--shadow);
+      padding:.75rem 1rem;
+      display:grid;
+      place-items: center;
+    }
+    .socials, .logos {
+      display:flex;
+      justify-content:center;
+      flex-wrap:wrap;
+      gap:.75rem 1rem;
+    }
+    .socials a {
+      color: var(--muted);
+    }
+    .logos img, .logos svg {
+      height:110px;
+      width:110px;
+      display:block;
+    }
+    .fineprint {
+      font-size:.85rem;
+    }
+
+    /* A11y utilities */
+    .visually-hidden {
+      position:absolute !important;
+      height:1px;
+      width:1px;
+      overflow:hidden;
+      clip:rect(1px,1px,1px,1px);
+      white-space:nowrap;
+      }
+    @media (prefers-reduced-motion: reduce){ 
+      .btn{ transition:none; }
+    }
+    @media (prefers-contrast: more){
+      .btn{ box-shadow:none; }
+    }
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <header>
+      <div class="brand">
+        <img src="/assets/img/IDigBio_Logo_RGB.png" alt="iDigBio logo" />
+      </div>
+
+      <section class="notice" aria-labelledby="moved-title">
+        <h1 id="moved-title">We've moved</h1>
+        <p>Please see the links below for quick access to iDigBio-related information.</p>
+      </section>
+    </header>
+
+    <main id="destinations">
+      <div class="grid" role="list">
+        <article class="card" role="listitem">
+          <h2>iDigBio at GBIF</h2>
+          <p>The GBIF Hosted Portal is the new front page of iDigBio.</p>
+          <div class="spacer"></div>
+          <div class="aside" role="note">
+            Looking for details about the move? See the <a href="https://idigbio.gbif.us/en/faq/">Hosted Portal FAQ</a>.
+          </div>
+          <a class="btn" href="https://idigbio.gbif.us/">
+            Go to Hosted Portal
+          </a>
+        </article>
+
+        <article class="card" role="listitem">
+          <h2>iDigBio.org Website Archive</h2>
+          <p>Browse the original website, preserved via the Internet Archive (Archive-It).</p>
+          <div class="spacer"></div>
+          <a class="btn" href="https://wayback.archive-it.org/17494/idigbio.org">
+            View website archive
+          </a>
+        </article>
+
+        <article class="card" role="listitem">
+          <h2>Zoom Events Hub</h2>
+          <p>Register for upcoming iDigBio virtual events and access event details.</p>
+          <div class="spacer"></div>
+          <a class="btn" href="https://ufl.zoom.us/ze/hub/iDigBio">
+            Go to events
+          </a>
+        </article>
+
+        <article class="card" role="listitem">
+          <h2>iDigBio Portal</h2>
+          <p>Search and explore biodiversity specimen data, aggregated by iDigBio.</p>
+          <div class="spacer"></div>
+          <a class="btn" href="https://portal.idigbio.org/">
+            Visit iDigBio Portal
+          </a>
+        </article>
+      </div>
+
+      <p class="aside" role="note">
+        Need assistance? Email <a href="mailto:info@idigbio.org">info@idigbio.org</a> and we'll direct you to the right place.
+      </p>
+    </main>
+
+    <footer>
+      <section class="logo-suite">
+        <div class="socials">
+          <a href="https://twitter.com/iDigBio" title="X/Twitter"><i class="fa-brands fa-square-x-twitter fa-2xl"></i></a>
+          <a href="https://www.youtube.com/@iDigBio" title="YouTube"><i class="fa-brands fa-youtube fa-2xl"></i></a>
+          <a href="https://www.facebook.com/iDigBio" title="Facebook"><i class="fa-brands fa-facebook fa-2xl"></i></a>
+          <a href="https://www.instagram.com/iDigBio" title="Instagram"><i class="fa-brands fa-instagram fa-2xl"></i></a>
+          <a href="https://www.linkedin.com/company/93419602/" title="LinkedIn"><i class="fa-brands fa-linkedin fa-2xl"></i></a>
+        </div>
+      </section>
+      <section class="logo-suite">
+        <div class="logos">
+          <a href="https://nsf.gov/"><img alt="National Science Foundation" src="/assets/img/NSFlogo-400x400.png" /></a>
+          <a href="https://ufl.edu/"><img alt="University of Florida" src="/assets/img/UFlogo-400x400.png" /></a>
+          <a href="https://fsu.edu/"><img alt="Florida State University" src="/assets/img/FSUlogo-400x400.png" /></a>
+          <a href="https://biodiversity.ku.edu/"><img alt="The University of Kansas" src="/assets/img/KUlogo-400x400.png" /></a>
+          <a href="https://www.floridamuseum.ufl.edu/"><img alt="Florida Museum" src="/assets/img/FMlogo-400x400.png" /></a>
+          <a href="https://www.gbif.org/participant/375"><img alt="Global Biodiversity Information Facility Participant Node" src="/assets/img/GBIFNodelogo.svg" /></a>
+        </div>
+      </section>
+
+      <p class="fineprint">
+        iDigBio is funded by grants from the National Science Foundation [DBI-1115210 (2011-2018), DBI-1547229 (2016-2022), &amp; DBI-2027654 (2021-2026)]. Any opinions, findings, and conclusions or recommendations expressed in this material are those of the author(s) and do not necessarily reflect the views of the National Science Foundation. &copy; 2011-2026 iDigBio
+      </p>
+    </footer>
+  </div>
+</body>
+</html>

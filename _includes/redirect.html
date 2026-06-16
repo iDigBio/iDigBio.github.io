@@ -1,0 +1,16 @@
+{% comment %}
+GitHub Pages doesn't let us configure redirects, so all redirecting has to be clientside.
+1. This uses javascript to avoid cluttering the navigation history
+2. If javascript is not available, just redirect immediately
+3. If the browser blocks redirects, then the user has to redirect themselves??
+{% endcomment -%}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <script>window.location.replace("/we-moved");</script>
+  <noscript><meta http-equiv="refresh" content="0;url=/we-moved" /></noscript>
+</head>
+<body>
+  <p>This site has been archived. <a href="/we-moved">Learn more about available resources</a> if you have not been automatically redirected.</p>
+</body>
+</html>
