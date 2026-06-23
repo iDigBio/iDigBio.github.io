@@ -7,10 +7,10 @@ GitHub Pages doesn't let us configure redirects, so all redirecting has to be cl
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <script>window.location.replace("/we-moved");</script>
-  <noscript><meta http-equiv="refresh" content="0;url=/we-moved" /></noscript>
+  <script>window.location.replace("{{ include.url }}");</script>
+  <noscript><meta http-equiv="refresh" content="0;url={{ include.url }}" /></noscript>
 </head>
 <body>
-  <p>This site has been archived. <a href="/we-moved">Learn more about available resources</a> if you have not been automatically redirected.</p>
+  <p>The content you have requested has been moved. <a href="{{ include.url }}">{{ include.link-text }}</a> {{ include.link-text-suffix }}</p>
 </body>
 </html>
