@@ -1,7 +1,13 @@
 ---
 layout: ~
 ---
+{% comment %}
+Effective 20 Nov 2026, iDigBio's [GBIF Hosted Portal](https://idigbio.gbif.us/) is the new official website/portal.
+Web traffic will be redirected to <https://idigbio.gbif.us/> instead of [/we-moved.html](we-moved.html). 
+Portal traffic will be redirected to the [integrated search portal](https://idigbio.gbif.us/occurrence/search) instead of <https://portal.idigbio.org/>.
+{% endcomment -%}
+
 {% include redirect.html
-  url="https://portal.idigbio.org/"
+  url="https://idigbio.gbif.us/occurrence/search"
   link-text="Go to iDigBio Portal"
 %}

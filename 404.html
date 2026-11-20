@@ -9,23 +9,30 @@ GitHub Pages doesn't let us configure redirects, so all redirecting has to be cl
 2. If javascript is not available, just redirect immediately to catch-all /we-moved
 3. If the browser blocks redirects, then the user has to redirect themselves??
 {% endcomment -%}
+
+{% comment %}
+Effective 20 Nov 2026, iDigBio's [GBIF Hosted Portal](https://idigbio.gbif.us/) is the new official website/portal.
+Web traffic will be redirected to <https://idigbio.gbif.us/> instead of [/we-moved.html](we-moved.html). 
+Portal traffic will be redirected to the [integrated search portal](https://idigbio.gbif.us/occurrence/search) instead of <https://portal.idigbio.org/>.
+{% endcomment -%}
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
   <script>
     if (!window.location.pathname.startsWith('/portal/'))
-      window.location.replace("/we-moved");
+      window.location.replace("https://idigbio.gbif.us/occurrence/search");
     else {
       let url = new URL(window.location.href);
-      url.hostname = 'portal.idigbio.org';
+      url.hostname = 'idigbio.gbif.us';
       var urlRedirectTarget = url.href;
       window.location.replace(urlRedirectTarget);
     }
   </script>
-  <noscript><meta http-equiv="refresh" content="0;url=/we-moved" /></noscript>
+  <noscript><meta http-equiv="refresh" content="0; url=https://idigbio.gbif.us/" /></noscript>
 </head>
 <body>
-  <p><span id="body-msg-pre">The content you have requested has been moved. </span><a id="body-link" href="/we-moved">Learn more about available resources</a><span id="body-link-post"> if you have not been automatically redirected.</span></p>
+  <p><span id="body-msg-pre">The content you have requested has been moved. </span><a id="body-link" href="https://idigbio.gbif.us/">Learn more about available resources</a><span id="body-link-post"> if you have not been automatically redirected.</span></p>
   <script>
     // If redirect fails for some reason but javascript is allowed
     // not sure why I'm over-engineering this now that I think about it
